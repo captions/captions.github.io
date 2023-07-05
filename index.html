@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta content="en-us" http-equiv="Content-Language" />
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link rel="shortcut icon" href="chrome.png" type="image/x-icon"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+<meta name="author" content="Cheng" />
+
+<title>主页</title>
+
+<style type="text/css">
+
+* {
+
+	margin: 0;
+
+	padding: 0;
+
+}
+
+body {
+
+	text-align: center;
+
+}
+
+#content {
+
+	width: 100%;
+
+	padding: 10px 0;
+
+	text-align: center;
+
+}
+
+#logo a {
+
+	border: 0;
+
+	text-decoration: none;
+
+}
+
+#logo img {
+
+	width: 40%;
+
+	margin: 40px auto 20px;
+
+	border: 0;
+
+}
+
+#search_input {
+
+	width: 100%;
+
+	height: 40px;
+
+	padding: 0 5px;
+
+	border: none;
+
+	outline: 0;
+
+	font-size: 16px;
+
+	color: #4a4266;
+
+	background-color: transparent;
+
+}
+
+.search_part {
+
+	margin-top: 20px;
+
+	margin-bottom: 30px;
+
+}
+
+span {
+
+	display: block;
+
+	overflow: hidden;
+
+	padding-left: 2px;
+
+	font-size: 12px;
+
+	vertical-align: middle;
+
+}
+
+.search_bar {
+
+	-webkit-animation: fadeIn 2.5s;
+
+	animation: fadeIn 2.5s;
+
+	display: table;
+
+	width: 88%;
+
+	max-width: 400px;
+
+	height: 20px;
+
+	margin: 0 auto;
+
+	box-shadow: 0 0 5px 0 rgba(70,70,40,.4);
+
+	border-radius: 5px;
+
+	vertical-align: middle;
+
+	background-color: rgba(255,255,255,.0);
+
+}
+
+#search_submit {
+
+	float: right;
+
+	height: 40px;
+
+	padding: 0 13px 0 13px;
+
+	border: none;
+
+	outline: 0;
+
+	font-size: 18px;
+
+	font-weight: 500;
+
+	color: #4a4266;
+
+	background-color: transparent;
+
+}
+
+.bdSug_app {
+
+	display: none !important;
+
+}
+
+.bdSug_wpr {
+
+	-webkit-animation: fadeIn 1s;
+
+	animation: fadeIn 1s;
+
+	left: 5.9% !important;
+
+	width: 87.6% !important;
+
+	border: 1px solid #e3e3e3 !important;
+
+	border-radius: 5px !important;
+
+}
+
+.bdSug_pre {
+
+	line-height: 20px !important;
+
+}
+
+.bdSug_wpr table {
+
+	padding: 5px !important;
+
+}
+
+.bdSug_wpr td {
+
+	padding: 6px 2px!important;
+
+	color: #666;
+
+}
+
+.img-list,.text-list {
+
+	width: 100%;
+
+}
+
+.box {
+
+	-webkit-animation: flipInX 1s;
+
+	animation: flipInX 1s;
+
+	display: inline-block;
+
+	position: relative;
+
+	width: 20%;
+
+	margin: 4px;
+
+	border: 0;
+
+}
+
+.box a {
+
+	position: absolute;
+
+	top: 0;
+
+	left: 0;
+
+	width: 100%;
+
+	height: 100%;
+
+}
+
+.url {
+
+	width: 98%;
+
+	height: 1.5em;
+
+	overflow: hidden;
+
+	margin: auto;
+
+	padding-top: 3px;
+
+	padding-bottom: 8px;
+
+	-webkit-border-top-right-radius: 5px;
+
+	-webkit-border-bottom-right-radius: 5px;
+
+	text-overflow: ellipsis;
+
+	-o-text-overflow: ellipsis;
+
+	-ms-text-overflow: ellipsis;
+
+	font-size: 0.75em;
+
+	line-height: 1.5em;
+
+	white-space: nowrap;
+
+	color: #4a4266;
+
+}
+
+.icon {
+
+	margin:0 auto;
+
+	width: 3em;
+
+	height: 3em;
+
+	max-width: 4.5em;
+
+	background-image:url(nav.png);
+
+    background-size:48px 192px;
+
+}
+
+.icon1 {background-position:top left}
+
+.icon2 {background-position:0 -48px}
+
+.icon3 {background-position:0 -96px}
+
+.icon4 {background-position:bottom left}
+
+.title {
+
+	height: 30px;
+
+	line-height: 30px;
+
+	padding: 0 10px 0 20px;
+
+	font-size: 16px;
+
+	color: #4a4266;
+
+	background-color: #ffffff;
+
+}
+
+.button {
+
+	display: inline-block;
+
+	width: 18%;
+
+	margin: 6px;
+
+	padding: 6px 0;
+
+	border: solid 1px #ddd;
+
+	border-radius: 4px;
+
+	text-decoration: none;
+
+	font-size: 0.75em;
+
+	color: #4a4266;
+
+	background-color: #ffffff;
+
+	transition: all 1s cubic-bezier(0.175,0.885,0.32,1) 0s
+
+}
+
+.button:hover {
+
+	transition: all .3s cubic-bezier(0.175,0.885,0.32,1) 0s
+
+}
+
+.button:active {
+
+	outline: 0;
+
+	transition: all .3s cubic-bezier(0.175,0.885,0.32,1) 0s
+
+}
+
+.button-bg1 {
+
+	border-color: #f7cdbc;
+
+}
+
+.button-bg2 {
+
+	border-color: #fbf2e3;
+
+}
+
+.button-bg3 {
+
+	border-color: ;
+
+}
+
+.button-bg4 {
+
+	border-color: #b9dec9;
+
+}
+
+.button-bg5 {
+
+	border-color: #f7cdbc;
+
+}
+
+.button-bg6 {
+
+	border-color: #fbf2e3;
+
+}
+
+.button-bg7 {
+
+	border-color: ;
+
+}
+
+.button-bg8 {
+
+	border-color: #b9dec9;
+
+}
+
+.shuxing {
+
+	-webkit-animation: fadeInDown 1s;
+
+	animation: fadeInDown 1s;
+
+	margin-top: 20px;
+
+	padding: 0 20px;
+
+	color: #4a4266;
+
+}
+
+.shuxing .l {
+
+	display: none !important
+
+}
+
+.iciba_common_laba, .iciba_common_top_lx {
+
+	display: none !important
+
+}
+
+.ciba_ds_juzi {
+
+	width: 98% !important;
+
+	height: auto !important;
+
+	float: none !important;
+
+}
+
+.ciba_ds_juzi a {
+
+	text-decoration: none;
+
+	display: block;
+
+}
+
+.ciba_ds_con {
+
+	line-height: 24px !important;
+
+}
+
+@-webkit-keyframes flipInX {
+
+	0% {
+
+		-webkit-transform: perspective(400px) rotateX(90deg);
+
+		transform: perspective(400px) rotateX(90deg);
+
+		opacity: 0
+
+	}
+
+	40% {
+
+		-webkit-transform: perspective(400px) rotateX(-10deg);
+
+		transform: perspective(400px) rotateX(-10deg)
+
+	}
+
+	70% {
+
+		-webkit-transform: perspective(400px) rotateX(10deg);
+
+		transform: perspective(400px) rotateX(10deg)
+
+	}
+
+	100% {
+
+		-webkit-transform: perspective(400px) rotateX(0);
+
+		transform: perspective(400px) rotateX(0);
+
+		opacity: 1
+
+	}
+
+}
+
+@keyframes flipInX {
+
+	0% {
+
+		-webkit-transform: perspective(400px) rotateX(90deg);
+
+		-ms-transform: perspective(400px) rotateX(90deg);
+
+		transform: perspective(400px) rotateX(90deg);
+
+		opacity: 0
+
+	}
+
+	40% {
+
+		-webkit-transform: perspective(400px) rotateX(-10deg);
+
+		-ms-transform: perspective(400px) rotateX(-10deg);
+
+		transform: perspective(400px) rotateX(-10deg)
+
+	}
+
+	70% {
+
+		-webkit-transform: perspective(400px) rotateX(10deg);
+
+		-ms-transform: perspective(400px) rotateX(10deg);
+
+		transform: perspective(400px) rotateX(10deg)
+
+	}
+
+	100% {
+
+		-webkit-transform: perspective(400px) rotateX(0);
+
+		-ms-transform: perspective(400px) rotateX(0);
+
+		transform: perspective(400px) rotateX(0);
+
+		opacity: 1
+
+	}
+
+}
+
+@-webkit-keyframes fadeIn {
+
+	0% {
+
+		opacity: 0
+
+	}
+
+	100% {
+
+		opacity: 1
+
+	}
+
+}
+
+@keyframes fadeIn {
+
+	0% {
+
+		opacity: 0
+
+	}
+
+	100% {
+
+		opacity: 1
+
+	}
+
+}
+
+@-webkit-keyframes fadeInDown {
+
+	0% {
+
+		opacity: 0;
+
+		-webkit-transform: translateY(-20px);
+
+		transform: translateY(-20px)
+
+	}
+
+	100% {
+
+		opacity: 1;
+
+		-webkit-transform: translateY(0);
+
+		transform: translateY(0)
+
+	}
+
+}
+
+@keyframes fadeInDown {
+
+	0% {
+
+		opacity: 0;
+
+		-webkit-transform: translateY(-20px);
+
+		-ms-transform: translateY(-20px);
+
+		transform: translateY(-20px)
+
+	}
+
+	100% {
+
+		opacity: 1;
+
+		-webkit-transform: translateY(0);
+
+		-ms-transform: translateY(0);
+
+		transform: translateY(0)
+
+	}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="content">
+
+  <div id="logo"><a href="javascript:tdy6Nb5=new%20Date();w2RtxZ=tdy6Nb5.getYear();tG82Nu=(w2RtxZ<2000)?w2RtxZ+1900:w2RtxZ;YbU7v3w=%27December%2031,%27+tG82Nu;var%20eY2FH9t=new%20Date(YbU7v3w);alert(%27今年只剩下：%20%27+Math.round((eY2FH9t.getTime()-tdy6Nb5.getTime())/86400000)+%27%20天了！加油吧💪！%27)"><img src="googlelogo.gif" alt="书签"></a></div>
+
+  <div class="search_part">
+
+<form action="https://www.baidu.com/s" class="search_bar">
+
+      <input type="submit" id="search_submit" value="↵" >
+
+      <span>
+
+      <input class="search" type="text" name="word" id="search_input"  baiduSug="1">
+
+      </span>
+
+    </form>
+
+  </div>
+
+<div class="img-list">
+
+  <div class="box"><a href="https://github.com/captions?tab=stars"></a>
+
+    <p class="icon icon1"></p>
+
+    <p class="url">精选</p>
+
+  </div>
+
+  <div class="box"> <a href="index2.html"></a>
+
+    <p class="icon icon2"></p>
+
+    <p class="url">Search</p>
+
+  </div>
+
+  <div class="box"> <a href="https://netcut.cn/jy2023"></a>
+
+    <p class="icon icon3"></p>
+
+    <p class="url">剪切板</p>
+
+  </div>
+
+  <div class="box"> <a href="https://tophub.today/daily"></a>
+
+    <p class="icon icon4"></p>
+
+    <p class="url">早报</p>
+
+  </div>
+
+  </div>
+
+  <div class="text-list">
+
+  <a class="button button-bg1" href="https://www.chongbuluo.com/">虫部落</a>
+
+  <a class="button button-bg2" href="https://v2ex.com/">V2EX</a>
+
+  <a class="button button-bg3" href="https://tools.miku.ac/">工具集</a>
+
+  <a class="button button-bg4" href="http://m.ilxdh.com/">龙轩导航</a>
+
+  <a class="button button-bg5" href="http://www.sssoou.com/">TG搜索</a>
+
+  <a class="button button-bg6" href="https://meiriyiwen.com/">每日一文</a>
+
+  <a class="button button-bg7" href="https://data.newrank.cn/m/s.html?s=NykqOiw2LjJJPw">图文搜索</a>
+
+  <a class="button button-bg8" href="https://www.runningcheese.com/">奶酪博客</a>
+
+  </div>
+
+<div class="shuxing">
+
+  <script type="text/javascript" src="http://open.iciba.com/ds_open.php?id=54055&name=%E4%BF%9D%E5%BE%B7%E5%9C%A8%E7%BA%BF&auth=226994D1666A2E1E3E3D71C79CA27C72" charset="utf-8"></script>
+
+</div>
+
+</div>
+
+<!--
+
+-->
+
+</body>
+
+<script charset="gbk" src="https://www.baidu.com/js/opensug.js"></script>
+
+</html>
