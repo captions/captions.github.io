@@ -1,6 +1,6 @@
 [Adblock Plus 2.0]
 
-!Version:2021-10-27  08 : 20  周三
+!Version:2023-09-15  01 : 19  周五
 
 !Title:Mobile Ads
 
@@ -20,6 +20,17 @@ m.huya.com##.start-btn
 
 m.huya.com##A.header-app-btn
 
+m.huya.com##.btn-open-adpp
+
+m.huya.com##.anchor-latest-post
+
+m.huya.com##.more_live
+
+m.huya.com##.room-info
+
+m.huya.com##.top.header-nav > .header-nav-wrap
+
+m.huya.com##.nav-icon-down.nav-icon
 
 
 !知乎 zhihu.com❗
@@ -287,6 +298,12 @@ www.coolapk.com##[href="javascript:void(0);"] > .download_button
 www.coolapk.com##.weui-skin_android.weui-dialog
 
 www.coolapk.com##.weui-mask
+
+www.coolapk.com##[href="/apk/com.coolapk.market"]
+
+www.coolapk.com##.feed-status > div
+
+www.coolapk.com##span
 
 
 
@@ -637,6 +654,23 @@ m.douban.com##div:nth-of-type(13)
 m.douban.com##.card > div:nth-of-type(3) > div
 
 m.douban.com##.download-app
+
+m.douban.com##.subject-banner
+
+m.douban.com##.sub-vendor
+
+m.douban.com##h2 > [href^="https://www.douban.com/doubanapp/card/get_app"]
+
+m.douban.com##.write-comment
+
+m.douban.com##.write-review
+
+m.douban.com##.subject-rec > .bd
+
+m.douban.com##div.center:nth-of-type(2)
+
+m.douban.com##.subject-rec > h2
+
 
 
 
@@ -1111,3 +1145,47 @@ bookfere.com##.clear.middle-title > h2 > [href]
 bookfere.com##.clear.con-top
 
 bookfere.com##.current_nav
+
+
+! 雷速 leisu.com❗
+
+m.leisu.com##div.list-text-box:nth-of-type(45)
+
+m.leisu.com##.speak-box > [href]
+
+m.leisu.com##.speak-box
+
+m.leisu.com##.ulinkBut
+
+
+
+! 自由微信 freewechat.com❗
+
+freewechat.com##div.amp-scrollable-carousel-slide.amp-carousel-slide.hot-article:nth-of-type(1)
+
+freewechat.com###hot-articles
+
+freewechat.com###share-wechat
+
+freewechat.com##[href="/app"]
+
+freewechat.com###menu
+
+freewechat.com###top
+
+freewechat.com###share-buttons
+
+freewechat.com##[href="/submit"]
+
+
+
+! 水果派 fpie2.com❗
+
+fpie2.com##.detail.download > div
+
+fpie2.com##.download > div
+
+fpie2.com##div.mint-swipe-item:nth-of-type(5)
+
+
+
