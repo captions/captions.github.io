@@ -61,6 +61,10 @@ function words() {
        word+='intext:'+'"'+words[i]+'"'+' -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) -inurl:(index_of|listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis) intitle:"index.of./"'+' ';
          }
         else{
+        if ($('#png').prop('checked')){
+        word+='"'+words[i]+'"'+'&tbm=isch'+' ';
+             }
+            else{
             word+=words[i]+' ';
             }
         }
