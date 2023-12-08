@@ -67,6 +67,7 @@ function words() {
             }
         }
     }
+}
     return ' '+word;
 }
 
