@@ -5,6 +5,7 @@ function bodyLoad() {
     $('#zhanValBox').hide();
     $('#fileValBox').hide();
     $('#siteValBox').hide();
+    $('#pngValBox').hide();
     $('#fileVal').hide();
     $('#delValBox').hide();
     $('#timValBox').hide();
@@ -37,12 +38,13 @@ function goto() {
     let del=delWords();
     let tim=getTim();
     let site=getSite();
+    let png=getPng();
     let tittle=getTittle();
     let body=getTextWords();
     let zhan=getZhan();
     let file=getFile();
     let url="https://www.google.com/search?hl=zh-CN&safe=off&num=30&q=";
-    url=url+file+word+del+tim+zhan+site+tittle+body;
+    url=url+file+word+del+tim+zhan+site+tittle+png+body;
     window.open(url);
 }
 
@@ -115,6 +117,21 @@ function getSite() {
             lSite='';
         }
         return lSite;
+    }else {
+        return '';
+    }
+}
+function getPng() {
+// 图片搜索
+    if ($('#png').prop('checked')){
+        if ($('#pngVal').val()===''){
+            return '';
+        }
+        let png='&tbm=isch'+$('#pngVal').val();
+        if (!$('#png').prop('checked')){
+            png='';
+        }
+        return png;
     }else {
         return '';
     }
@@ -248,6 +265,11 @@ function layStart() {
                 $('#tittleValBox').slideDown(300);
             }else {
                 $('#tittleValBox').hide(300);
+            }
+             if ($('#png').prop('checked')){
+                $('#pngValBox').slideDown(300);
+            }else {
+                $('#pngValBox').hide(300);
             }
             if ($('#tim').prop('checked')){
                 $('#timValBox').slideDown(300);
